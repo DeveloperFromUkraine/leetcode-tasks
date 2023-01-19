@@ -27,7 +27,7 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
         list1 = list1.next;
     }
 
-    while(list1 != null || list2 != null) {
+    do {
         if(list1 == null && list2 !=null) {
             listOfElems.next = new ListNode(list2.val);
             list2 = list2.next;
@@ -44,7 +44,7 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
             }
         }
         listOfElems = listOfElems.next;
-    }
+    } while(list1 != null || list2 != null)
 
     return firstElement;
 };
